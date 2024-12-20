@@ -6,6 +6,7 @@ compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
 runtimeAndroid = "1.7.6"
 uiToolingPreviewAndroid = "1.7.6"
+lifecycleViewModelCompose = "2.6.1"  # Add lifecycle viewmodel version
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -17,6 +18,7 @@ compose-foundation = { module = "androidx.compose.foundation:foundation", versio
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
 androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
 androidx-ui-tooling-preview-android = { group = "androidx.compose.ui", name = "ui-tooling-preview-android", version.ref = "uiToolingPreviewAndroid" }
+compose-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewModelCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
