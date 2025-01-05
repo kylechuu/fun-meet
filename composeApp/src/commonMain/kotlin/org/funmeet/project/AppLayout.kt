@@ -34,12 +34,12 @@ fun AppLayout() {
             .background(Color.Black)
     ) {
 //        // Background Image
-//        Image(
-//            painter = loadDrawable("background"),
-//            contentDescription = "Background Image",
-//            modifier = Modifier.fillMaxSize(),
-//            contentScale = ContentScale.Crop
-//        )
+        Image(
+            painter = loadDrawable("background"),
+            contentDescription = "Background Image",
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
 
         // Content
         Column(

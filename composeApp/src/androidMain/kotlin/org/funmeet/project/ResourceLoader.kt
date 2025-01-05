@@ -9,7 +9,7 @@ import org.funmeet.project.R
 @Composable
 actual fun loadDrawable(resourceName: String): Painter {
     val resourceId = when (resourceName) {
-        "background_image" -> R.drawable.background
+        "background" -> R.drawable.background
         else -> throw IllegalArgumentException("Unknown resource: $resourceName")
     }
     return painterResource(resourceId)
