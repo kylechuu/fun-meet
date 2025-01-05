@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
@@ -14,26 +13,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-//import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.funmeet.project.loadDrawable
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
 fun AppLayout() {
-    Text("Hello, Android!")
+
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)
     ) {
-//        // Background Image
+        // Background Image
         Image(
             painter = loadDrawable("background"),
             contentDescription = "Background Image",
@@ -46,7 +42,7 @@ fun AppLayout() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp),
-            verticalArrangement = Arrangement.SpaceBetween,
+            verticalArrangement = Arrangement.SpaceBetween, // Keeps space between items
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // Title and Subtitle
@@ -73,6 +69,9 @@ fun AppLayout() {
                 )
             }
 
+            // Spacer to push the button down and create space between components
+            Spacer(modifier = Modifier.weight(1f))  // This takes up the remaining space
+
             // Main Button
             Button(
                 onClick = { /* Handle Button Click */ },
@@ -87,6 +86,9 @@ fun AppLayout() {
                 )
             }
 
+            // Add padding between the button and the login options
+            Spacer(modifier = Modifier.height(32.dp)) // Add space here
+
             // Login Options
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -98,26 +100,23 @@ fun AppLayout() {
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
 
-//                Row(
-//                    horizontalArrangement = Arrangement.SpaceEvenly,
-//                    modifier = Modifier.fillMaxWidth(0.6f)
-//                ) {
+                Row(
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    modifier = Modifier.fillMaxWidth(0.6f)
+                ) {
                     // Login Icons
-//                    LoginIcon(painterResource("icon_apple.png"), "Apple Login")
-//                    LoginIcon(painterResource("icon_google.png"), "Google Login")
-//                    LoginIcon(painterResource("icon_email.png"), "Email Login")
-//                }
+                    LoginIcon(loadDrawable("icons8_apple_logo_50"), "Apple Login")
+                    LoginIcon(loadDrawable("icons8_google_30"), "Google Login")
+                    LoginIcon(loadDrawable("icons8_email_24"), "Email Login")
+                }
 
-//                ClickableText(
-//                    text = "登录或注册即代表您同意用户服务协议",
-//                    style = TextStyle(color = Color.Gray, fontSize = 12.sp, textAlign = TextAlign.Center),
-//                    onClick = { /* Handle Terms of Service Click */ },
-//                    modifier = Modifier.padding(top = 16.dp)
-//                )
+                TermsAndConditionsText()
             }
         }
     }
 }
+
+
 
 @Composable
 fun LoginIcon(icon: Painter, contentDescription: String) {
