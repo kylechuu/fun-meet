@@ -29,7 +29,9 @@ kotlin {
     }
     
     sourceSets {
-        
+        commonMain {
+            resources.srcDirs("src/commonMain/composeResources")
+        }
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -45,9 +47,9 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
 //            implementation(libs.compose.ui.graphics)
         }
-//        commonMain.dependencies {
-//            implementation(libs.skiko)
-//        }
+        iosMain.dependencies {
+            implementation(libs.skiko)
+        }
     }
 }
 
@@ -82,6 +84,7 @@ dependencies {
     implementation(libs.androidx.foundation.layout.android)
     implementation(libs.androidx.ui.graphics.android)
     implementation(libs.androidx.ui.android)
+//    implementation(libs.androidx.ui.graphics.desktop)
     debugImplementation(compose.uiTooling)
 }
 

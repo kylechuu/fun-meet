@@ -17,8 +17,9 @@ kotlin = "2.1.0"
 foundationLayoutAndroid = "1.7.6"
 uiGraphicsAndroid = "1.7.6"
 uiAndroid = "1.7.6"
-#skiko = "0.9.0"
-#compose = "1.5.1"
+uiGraphicsDesktop = "1.7.0"
+skiko = "0.7.85"
+compose = "1.5.11"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -36,8 +37,9 @@ androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle
 androidx-foundation-layout-android = { group = "androidx.compose.foundation", name = "foundation-layout-android", version.ref = "foundationLayoutAndroid" }
 androidx-ui-graphics-android = { group = "androidx.compose.ui", name = "ui-graphics-android", version.ref = "uiGraphicsAndroid" }
 androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
-#compose-ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "compose" }
-#skiko = { module = "org.jetbrains.skiko:skiko", version.ref = "skiko" }
+androidx-ui-graphics-desktop = { group = "androidx.compose.ui", name = "ui-graphics-desktop", version.ref = "uiGraphicsDesktop" }
+compose-ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "compose" }
+skiko = { module = "org.jetbrains.skiko:skiko", version.ref = "skiko" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
